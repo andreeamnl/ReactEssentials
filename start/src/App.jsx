@@ -1,5 +1,5 @@
 import componentsimg from './assets/components.png';
-
+import { CORE_CONCEPTS } from "./data.js";
 const ReactDescriptions = ["Crucial", "Fundamental", "Core"];
 
 function getRandomInt(max){
@@ -39,13 +39,23 @@ function App() {
         <section id="core-concepts">
           <ul>
             <CoreConcept
-            title = "Core"
-            description = "The Core UI building block"
-            image = {componentsimg}
+            {...CORE_CONCEPTS[0]} //spread operator if value names are the same
             />
-            <CoreConcept/>
-            <CoreConcept/>
-            <CoreConcept/>
+            <CoreConcept
+            title = {CORE_CONCEPTS[1].title}
+            description = {CORE_CONCEPTS[1].description}
+            image = {CORE_CONCEPTS[1].image}
+            />
+            <CoreConcept
+            title = {CORE_CONCEPTS[2].title}
+            description = {CORE_CONCEPTS[2].description}
+            image = {CORE_CONCEPTS[2].image}
+            />
+            <CoreConcept
+            title = {CORE_CONCEPTS[3].title}
+            description = {CORE_CONCEPTS[3].description}
+            image = {CORE_CONCEPTS[3].image}
+            />
 
           </ul>
 

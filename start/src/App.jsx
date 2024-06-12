@@ -1,3 +1,5 @@
+import componentsimg from './assets/components.png';
+
 const ReactDescriptions = ["Crucial", "Fundamental", "Core"];
 
 function getRandomInt(max){
@@ -18,7 +20,15 @@ function Header(){
   );
 }
 
-
+function CoreConcept(props){
+  return(
+    <li>
+      <img src = {props.image} alt="..."></img>
+      <h3>{props.title}</h3>
+      <p>{props.description}</p>
+    </li>
+  );
+}
 
 function App() {
   return (
@@ -26,6 +36,20 @@ function App() {
       <Header/>
       <main>
         <h2>Time to get started!</h2>
+        <section id="core-concepts">
+          <ul>
+            <CoreConcept
+            title = "Core"
+            description = "The Core UI building block"
+            image = {componentsimg}
+            />
+            <CoreConcept/>
+            <CoreConcept/>
+            <CoreConcept/>
+
+          </ul>
+
+        </section>
       </main>
     </div>
   );

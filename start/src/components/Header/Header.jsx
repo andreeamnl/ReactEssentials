@@ -1,5 +1,6 @@
 const ReactDescriptions = ["Crucial", "Fundamental", "Core"];
-import reactImg from "../assets/react-core-concepts.png";
+import reactImg from "../../assets/react-core-concepts.png";
+import "./Header.css";
 
 function getRandomInt(max){
   return Math.floor(Math.random() * (max + 1));

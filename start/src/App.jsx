@@ -9,13 +9,11 @@ import TabButton from './components/TabButton.jsx';
 
 
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState("components");
+  const [selectedTopic, setSelectedTopic] = useState();
 
   function handleSelect(selectedButton){
-
     setSelectedTopic(selectedButton);
-    console.log(selectedButton);
-  
+    //console.log(selectedButton);
   }
 
   return (
@@ -56,7 +54,8 @@ function App() {
           <TabButton onSelect = {() =>handleSelect('state')} >State</TabButton>
 
           </menu>
-          <div id="tab-content">
+          {!selectedTopic ? <p>Please select a topic.</p> : null}
+          {selectedTopic ? (<div id="tab-content">
             <h3>
               {EXAMPLES[selectedTopic].title}</h3>
             <p>
@@ -64,7 +63,7 @@ function App() {
             <pre>
               <code>{EXAMPLES[selectedTopic].code}</code></pre>
 
-          </div>
+          </div>) : null }
 
         </section>
       </main>
